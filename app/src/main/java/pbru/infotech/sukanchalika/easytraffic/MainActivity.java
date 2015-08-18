@@ -1,9 +1,12 @@
 package pbru.infotech.sukanchalika.easytraffic;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
@@ -55,10 +58,23 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.traffic_12, R.drawable.traffic_13, R.drawable.traffic_14,
                 R.drawable.traffic_15, R.drawable.traffic_16, R.drawable.traffic_17,
                 R.drawable.traffic_18, R.drawable.traffic_19, R.drawable.traffic_20};
-                //เก็บค่าในตัวแปร array
+        //เก็บค่าในตัวแปร array
 
         MyAdapter objMyAdapter = new MyAdapter(MainActivity.this, intImage, strTitle);
         trafficListView.setAdapter(objMyAdapter);
+
+        //Active onClick on Listview คลิกเพื่อไปแสดงผลอีกหน้าหนึ่ง
+        trafficListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l)
+            { //i คือตำแหน่งใน array ว่าเลือก onClick ที่อันไหน
+                //Intent to detail
+                Intent objIntent = new Intent(MainActivity.this, DetailActivity.class);
+                startActivity(objIntent);
+
+
+            } //event
+        });
 
 
     }//createListView
