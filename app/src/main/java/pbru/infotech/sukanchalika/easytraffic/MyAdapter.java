@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * Created by Sukanchalika on 18/8/2558.
@@ -40,8 +42,22 @@ public class MyAdapter extends BaseAdapter // กด alt+enter จะได้ m
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) { //get view
+        LayoutInflater objLayoutInflater = (LayoutInflater)objContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        //open service
+        View view1 = objLayoutInflater.inflate(R.layout.listview_traffic, viewGroup, false);
+        //ให้ดัน obj นี้ไปทำงานที่ listview
+
+        //show Image ให้โยงการแสดลผลไปที่ Imvicon
+        ImageView iconImageView = (ImageView) view1.findViewById(R.id.imvicon);
+        iconImageView.setImageResource(iconInts[i]);
+
+        //Show Text แสดงตัวอักษร
+        TextView titleTextView = (TextView) view1.findViewById(R.id.txtShowTitle);
+        titleTextView.setText(titleStrings[i]);
 
 
-        return null;
+
+
+        return view1;
     }
 }

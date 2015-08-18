@@ -11,7 +11,6 @@ public class MainActivity extends AppCompatActivity {
     //Explicit ประกาศตัวแปร เพื่อบอกว่าจะทำการ run app เพื่อเตรียม RAM ในการใช้งาน
     private ListView trafficListView;   // การตั้งตัวแปรสำหรับใช้ใน class ใช้ shift+ctl+enter คือ ;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // Main method หลักของการทำงานจะเริ่มเมื่อมีการเรียกใช้งาน
@@ -21,7 +20,36 @@ public class MainActivity extends AppCompatActivity {
         //Initial Widget ผูกตัวแปรที่ประกาศไว้กับ .xml
         initialWidget(); //เรียกใช้ method
 
+        //Create ListView
+        createListView(); //จะเป็นตัวแดง เอาเมาส์ไปนี้แล้วกด alt+enter เพื่อสร้าง method
+
     }
+
+    private void createListView() { //กำหนดค่าให้กับ array
+        String[] strTitle = new String[20];
+        strTitle[0] = "ห้ามเลี้ยวซ้าย";
+        strTitle[1] = "ห้ามเลี้ยวขวา";
+        strTitle[2] = "ตรงไป";
+        strTitle[3] = "เลี้ยวขวา";
+        strTitle[4] = "เลี้ยวซ้าย";
+        strTitle[5] = "ออก";
+        strTitle[6] = "เข้า IN";
+        strTitle[7] = "ออก OUT";
+        strTitle[8] = "หยุด";
+        strTitle[9] = "จำกัดความสูง";
+        strTitle[10] = "ทางแยก";
+        strTitle[11] = "ห้ามกลับรถ";
+        strTitle[12] = "ห้ามจอด";
+        strTitle[13] = "ระวังรถสวนทาง";
+        strTitle[14] = "ห้ามแซง";
+        strTitle[15] = "เข้า";
+        strTitle[16] = "หยุดตรวจ";
+        strTitle[17] = "จำกัดความเร็ว";
+        strTitle[18] = "จำกัดความกว้าง";
+        strTitle[19] = "จำกัดความสูง";
+
+
+    }//createListView
 
     private void initialWidget() {
         trafficListView = (ListView) findViewById(R.id.listView); //เลือก R ตาม app ที่เราตั้งไว้
