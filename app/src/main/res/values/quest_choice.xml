@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- สร้าง array เป็นตัว choice 4 ตัวเลือก -->
+    <string-array name="times1">
+        <item>ห้ามเลี้ยวซ้าย</item>
+        <item>ข้อหลอก</item>
+        <item>ข้อหลอก</item>
+        <item>ข้อหลอก</item>
+    </string-array>
+
+    <string-array name="times2">
+        <item>ข้อหลอก</item>
+        <item>ห้ามเลี้ยงขวา</item>
+        <item>ข้อหลอก</item>
+        <item>ข้อหลอก</item>
+    </string-array>
+
+    <string-array name="times3">
+        <item>ข้อหลอก</item>
+        <item>ข้อหลอก</item>
+        <item>ตรงไป</item>
+        <item>ข้อหลอก</item>
+    </string-array>
+
+    <string-array name="times4">
+        <item>ข้อหลอก</item>
+        <item>ข้อหลอก</item>
+        <item>ข้อหลอก</item>
+        <item>เลี้ยวขวา</item>
+    </string-array>
+
+    <string-array name="times5">
+        <item>เลี้ยวซ้าย</item>
+        <item>ข้อหลอก</item>
+        <item>ข้อหลอก</item>
+        <item>ข้อหลอก</item>
+    </string-array>
+
+    <string-array name="times6">
+        <item>ข้อหลอก</item>
+        <item>ทางออก</item>
+        <item>ข้อหลอก</item>
+        <item>ข้อหลอก</item>
+    </string-array>
+
+    <string-array name="times7">
+        <item>ข้อหลอก</item>
+        <item>ข้อหลอก</item>
+        <item>ทางเข้า IN</item>
+        <item>ข้อหลอก</item>
+    </string-array>
+
+    <string-array name="times8">
+        <item>ข้อหลอก</item>
+        <item>ข้อหลอก</item>
+        <item>ข้อหลอก</item>
+        <item>ทางเข้า OUT</item>
+    </string-array>
+
+    <string-array name="times9">
+        <item>หยุด</item>
+        <item>ข้อหลอก</item>
+        <item>ข้อหลอก</item>
+        <item>ข้อหลอก</item>
+    </string-array>
+
+    <string-array name="times10">
+        <item>ข้อหลอก</item>
+        <item>จำกัดทางความสูง</item>
+        <item>ข้อหลอก</item>
+        <item>ข้อหลอก</item>
+    </string-array>
+
+</resources>

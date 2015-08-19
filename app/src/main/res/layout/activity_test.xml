@@ -10,8 +10,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#78ffffff">
+        android:layout_height="match_parent">
 
         <TextView
             android:layout_width="wrap_content"
@@ -41,7 +40,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/ragChoice"
             android:layout_gravity="center_horizontal"
-            android:padding="30dp">
+            android:padding="30dp"
+            android:background="#78ffffff">
 
             <RadioButton
                 android:layout_width="wrap_content"
