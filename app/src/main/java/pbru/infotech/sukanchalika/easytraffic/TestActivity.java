@@ -4,10 +4,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class TestActivity extends AppCompatActivity {
 
@@ -18,6 +20,8 @@ public class TestActivity extends AppCompatActivity {
     private RadioButton choice1RadioButton, choice2RadioButton, choice3RadioButton, choice4RadioButton;
     private String[] questionStrings;
     private int[] imageInts;
+    private int radioAnInt, indexAnInt; //ค่าเริ่มต้นตัวเลยเป็น 0 อัตโนมัติ, string เป็น NULL
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +31,70 @@ public class TestActivity extends AppCompatActivity {
         //Bind Widget เป็นการ bind ตัวแปรกับ widget
         bindWidget(); //จะเกิดตัวแดง กด Alt+enter
 
+        // การสร้าง Radio Controller ตัวควบคุมในส่วนการทำงานของ Radio group
+        radioController();
+
     } //onCreate
+
+    public void clickAnswer(View view) {
+        //เมื่อมีการคลิกที่ปุ่ม Answer ให้มาเช็คคำตอบที่นี่
+        if (radioAnInt == 0) { //การแจ้งเตือนเมื่อไม่เลือกคำตอบใดๆ
+            Toast.makeText(TestActivity.this, "กรุณาคลิกเลือกคำตอบด้วยค่ะ", Toast.LENGTH_SHORT).show();
+        } else {
+            myModel(); //เช็คว่าทำครบ 10 ข้อรึยัง
+        }
+
+    } //clickAnswer
+
+    private void myModel() {
+        if (indexAnInt == 9) {
+            showAnswerDialog(); //สร้าง popup แจ้งผลคะแนนเมื่อทำครบ 10 ข้อ
+
+        } else {
+            indexAnInt += 1;
+
+            //change view
+            changeView(indexAnInt);
+        }
+    } //myModel
+
+    private void changeView(int anInt) {
+        //Change Question
+        questionTextView.setText(questionStrings[anInt]);
+    } //changeView
+
+    private void showAnswerDialog() {
+
+    }
+
+
+    private void radioController() {
+        //onCheck สามารถเปลี่ยนการเลือกบนหน้าจอได้
+        choiceRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i) {
+                    case R.id.radioButton:
+                        radioAnInt = 1;
+                        break;
+                    case R.id.radioButton2:
+                        radioAnInt = 2;
+                        break;
+                    case R.id.radioButton3:
+                        radioAnInt = 3;
+                        break;
+                    case R.id.radioButton4:
+                        radioAnInt = 4;
+                        break;
+                    default:
+                        radioAnInt = 0;
+                        break;
+                }
+            }
+        });
+
+
+    }
 
     //การตั้ง method โดยใช้ override โดยให้ไปเรียกการทำงานเริ่มต้นที่ onStart เริ่มแรก
     @Override
