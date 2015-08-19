@@ -28,10 +28,11 @@ public class MainActivity extends AppCompatActivity {
 
     } // Main Method
 
+
     //เรียก class ภายนอก , void ไม่มี return function
-//    public void clickTest(View view) {
-//        startActivity(new Intent(this, TestActivity.class));
-//    }
+    public void clickTest(View view) {
+        startActivity(new Intent(this, TestActivity.class));
+    }
 
 
     private void createListView() { //กำหนดค่าให้กับ array
